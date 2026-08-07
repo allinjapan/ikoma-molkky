@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IKOMA FC奈良 × 生駒市 モルック大会 supported by 播戸竜二・大竹洋平</title>
+<title>IKOMA FC 奈良 モルックカップ ～おばんざい杯～</title>
 <style>
   :root{
     --maroon:#5a1620;
@@ -202,6 +202,18 @@
   .gallery img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
   .gallery .g-big{grid-column:span 2;grid-row:span 2;}
 
+  /* Sponsors */
+  .sponsor-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;
+  }
+  .sponsor-box{
+    background:var(--paper);border:1px dashed var(--line);border-radius:12px;
+    height:96px;display:flex;align-items:center;justify-content:center;
+    padding:10px;
+  }
+  .sponsor-box img{max-width:100%;max-height:100%;object-fit:contain;}
+  .sponsor-box.placeholder{color:var(--muted);font-size:11.5px;letter-spacing:.05em;text-align:center;}
+
   /* Notices / accordion */
   .acc{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--paper);overflow:hidden;}
   .acc summary{
@@ -255,6 +267,7 @@
     .step-arrow{display:none;}
     .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
     .gallery .g-big{grid-column:span 2;grid-row:span 1;}
+    .sponsor-grid{grid-template-columns:repeat(2,1fr);}
     header.site .brand span{display:none;}
     .sticky-cta{display:flex;}
     section{padding:48px 0;}
@@ -271,7 +284,7 @@
   <div class="bar">
     <div class="brand">
       <img src="assets/img/emblem_sm.png" alt="IKOMA FC 奈良">
-      <span>IKOMA FC奈良 × 生駒市 モルック大会</span>
+      <span>IKOMA FC 奈良 モルックカップ ～おばんざい杯～</span>
     </div>
     <a class="cta-mini" href="#entry">エントリー方法</a>
   </div>
@@ -279,14 +292,14 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">2027.10.4 SUN ｜ 生駒山麓公園</span>
-    <h1>IKOMA FC奈良 × 生駒市<br><span class="accent">モルック大会</span></h1>
+    <span class="eyebrow">2026.10.4 SUN ｜ 生駒山麓公園</span>
+    <h1>IKOMA FC 奈良<br><span class="accent">モルックカップ ～おばんざい杯～</span></h1>
     <p class="supported">supported by 播戸竜二・大竹洋平</p>
     <div class="meta">
-      <div><b>日程</b>2027年10月4日（日）</div>
-      <div><b>会場</b>生駒山麓公園 多目的広場</div>
+      <div><b>日程</b>2026年10月4日（日）</div>
+      <div><b>会場</b><a href="https://maps.app.goo.gl/D1T7rbWNTzGevgvo6" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">生駒山麓公園 多目的広場</a></div>
       <div><b>参加費</b>3,000円／チーム</div>
-      <div><b>枠数</b>最大128チーム</div>
+      <div><b>枠数</b>最大132チーム</div>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#entry">エントリー方法を確認する</a>
@@ -336,10 +349,11 @@
         <h3><span class="dot"></span>開催場所</h3>
         <p>生駒山麓公園 多目的広場</p>
         <p style="color:var(--muted);font-size:13.5px;margin-top:4px;">〒630-0243 奈良県生駒市俵口町2088</p>
+        <p style="margin-top:8px;"><a href="https://maps.app.goo.gl/D1T7rbWNTzGevgvo6" target="_blank" rel="noopener" style="color:var(--maroon);font-weight:700;text-decoration:none;">📍 Googleマップで見る</a></p>
       </div>
       <div class="card">
         <h3><span class="dot"></span>参加費</h3>
-        <p>3,000円／チーム（消費税込、システム手数料別）</p>
+        <p>3,000円／チーム（エントリーシステム料3.6％・消費税込）</p>
       </div>
       <div class="card">
         <h3><span class="dot"></span>チーム人数</h3>
@@ -354,7 +368,7 @@
       </div>
       <div class="card">
         <h3><span class="dot"></span>エントリー枠数</h3>
-        <p>最大128チーム</p>
+        <p>最大132チーム</p>
         <p style="color:var(--muted);font-size:13.5px;margin-top:6px;">定員に達し次第、受付を終了します</p>
       </div>
     </div>
@@ -454,6 +468,25 @@
   </div>
 </section>
 
+<section id="sponsors">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">SPONSORS</span>
+      <h2>協賛企業</h2>
+      <p class="lead">本大会は下記の企業・団体様にご協賛いただいております（五十音順）</p>
+    </div>
+    <!-- ロゴを追加する場合は下記の .sponsor-box を
+         <div class="sponsor-box"><img src="assets/img/sponsors/会社名.png" alt="会社名"></div>
+         に差し替えてください（画像は assets/img/sponsors/ に配置） -->
+    <div class="sponsor-grid">
+      <div class="sponsor-box placeholder">協賛企業ロゴ</div>
+      <div class="sponsor-box placeholder">協賛企業ロゴ</div>
+      <div class="sponsor-box placeholder">協賛企業ロゴ</div>
+      <div class="sponsor-box placeholder">協賛企業ロゴ</div>
+    </div>
+  </div>
+</section>
+
 <section id="notice">
   <div class="wrap" style="max-width:820px;">
     <div class="section-head">
@@ -477,11 +510,8 @@
       <summary>参加費に関する注意事項</summary>
       <div class="acc-body">
         <ul>
-          <li>お支払い方法はクレジットカード／コンビニ払いとなります。</li>
-          <li>当選後、入金確認ができた時点でエントリー完了となります。</li>
-          <li>コンビニ決済を選択された方で、期日までにお支払いがなかった場合、エントリー取り消しとなりますのでご注意ください。</li>
-          <li>エントリーシステム料として、参加費の5％がかかります。</li>
-          <li>コンビニ払いの場合、別途220円の手数料がかかります。</li>
+          <li>お支払い方法はLinkまたはクレジットカード払いとなります。</li>
+          <li>エントリーシステム料の3.6％と税金が含まれます。</li>
           <li>参加費には当日のスポーツ傷害保険料が含まれます。</li>
           <li>大会中止の場合は、準備費用等を差し引いたうえで一部返金いたします。</li>
           <li>参加者都合によるキャンセルの場合、返金はいたしかねます。</li>
@@ -526,8 +556,8 @@
 
 <footer>
   <img src="assets/img/emblem_sm.png" alt="IKOMA FC 奈良">
-  <div>IKOMA FC奈良 × 生駒市 モルック大会 supported by 播戸竜二・大竹洋平</div>
-  <div style="margin-top:6px;">2027年10月4日（日）｜生駒山麓公園 多目的広場</div>
+  <div>IKOMA FC 奈良 モルックカップ ～おばんざい杯～</div>
+  <div style="margin-top:6px;">2026年10月4日（日）｜<a href="https://maps.app.goo.gl/D1T7rbWNTzGevgvo6" target="_blank" rel="noopener" style="color:#e9d9c2;">生駒山麓公園 多目的広場</a></div>
   <a class="foot-cta" href="#entry">アプリでエントリーする</a>
 </footer>
 
