@@ -181,8 +181,14 @@
     max-width:760px;margin:44px auto 0;background:#fff;color:var(--text);
     border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow);
   }
+  .app-download-head{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .app-icon{width:64px;height:64px;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.15);flex:0 0 auto;}
   .app-download h3{color:var(--maroon);font-size:16px;margin-bottom:4px;}
-  .app-download p.sub{font-size:13px;color:var(--muted);margin:0 0 20px;}
+  .app-download p.sub{font-size:13px;color:var(--muted);margin:0;}
+  .app-desc{
+    font-size:13.5px;color:var(--text);background:#f4ede0;border-radius:10px;
+    padding:12px 16px;margin:0 0 20px;
+  }
   .app-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
   .app-links .col{
     flex:1;min-width:220px;border:1px solid var(--line);border-radius:12px;
@@ -238,13 +244,6 @@
     text-align:center;margin-top:28px;font-size:13.5px;color:var(--muted);
     border-top:1px dashed var(--line);padding-top:22px;
   }
-
-  /* Sponsors line */
-  .supporters{
-    display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:18px;
-  }
-  .supporters .person{text-align:center;font-size:13px;color:var(--muted);}
-  .supporters .person b{display:block;font-size:16px;color:var(--maroon-dark);}
 
   footer{
     background:var(--maroon-dark);color:#e9d9c2;text-align:center;padding:36px 20px;font-size:12.5px;
@@ -432,8 +431,14 @@
     </div>
 
     <div class="app-download">
-      <h3>STEP1：ナイモルアプリのダウンロード</h3>
-      <p class="sub">お使いのスマートフォンに合わせて、下のQRコードまたはボタンからダウンロードしてください。</p>
+      <div class="app-download-head">
+        <img class="app-icon" src="assets/img/app_icon.png" alt="ナイモルアプリ アイコン">
+        <div>
+          <h3>STEP1：ナイモルアプリのダウンロード</h3>
+          <p class="sub">お使いのスマートフォンに合わせて、下のQRコードまたはボタンからダウンロードしてください。</p>
+        </div>
+      </div>
+      <p class="app-desc">アプリからあなたのチームの試合コートや対戦相手、スケジュールやレギュレーションまですべて確認できます。</p>
       <div class="app-links">
         <div class="col">
           <img class="qr" src="assets/img/qr_ios.png" alt="iPhone用QRコード">
@@ -465,11 +470,6 @@
       <img src="assets/img/gallery8.jpg" alt="モルックを投げる参加者">
       <img src="assets/img/gallery1.jpg" alt="IKOMA FC奈良 チーム">
       <img class="g-big" src="assets/img/gallery3.jpg" alt="IKOMA FC奈良 集合写真">
-    </div>
-
-    <div class="supporters">
-      <div class="person"><b>播戸 竜二</b>Supporting Player</div>
-      <div class="person"><b>大竹 洋平</b>Supporting Player</div>
     </div>
   </div>
 </section>
