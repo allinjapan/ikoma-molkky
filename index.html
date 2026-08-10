@@ -201,6 +201,19 @@
     padding:9px 18px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;
   }
 
+  /* App preview screenshots */
+  .app-preview{max-width:760px;margin:44px auto 0;text-align:center;}
+  .app-preview-title{
+    font-size:14px;letter-spacing:.1em;color:var(--gold-light);margin-bottom:20px;
+  }
+  .app-preview-grid{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
+  .phone-shot{width:200px;}
+  .phone-shot img{
+    width:100%;border-radius:20px;border:4px solid rgba(255,255,255,.15);
+    box-shadow:0 14px 34px rgba(0,0,0,.4);
+  }
+  .phone-shot .caption{margin-top:12px;font-size:12.5px;color:#cfd4e2;line-height:1.6;}
+
   /* Gallery */
   .gallery{
     display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:8px;
@@ -449,6 +462,20 @@
           <img class="qr" src="assets/img/qr_android.png" alt="Android用QRコード">
           <div class="platform">Android をお使いの方</div>
           <a class="store-btn" href="https://play.google.com/store/apps/details?id=jp.co.naimol&pcampaignid=web_share" target="_blank" rel="noopener">Google Play で見る</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-preview">
+      <h3 class="app-preview-title">アプリ画面イメージ</h3>
+      <div class="app-preview-grid">
+        <div class="phone-shot">
+          <img src="assets/img/app_sample1.jpg" alt="試合コートやスケジュールを表示するアプリ画面">
+          <p class="caption">試合コート・対戦カード・スケジュールがひと目で分かります</p>
+        </div>
+        <div class="phone-shot">
+          <img src="assets/img/app_sample2.jpg" alt="予選結果を表示するアプリ画面">
+          <p class="caption">予選の結果もアプリでリアルタイムに確認できます</p>
         </div>
       </div>
     </div>
