@@ -148,6 +148,37 @@
     border-radius:10px;padding:12px 16px;
   }
 
+  /* Regulation button + dialog */
+  .regulation-cta{text-align:center;margin-top:22px;}
+  .btn-regulation{
+    display:inline-flex;align-items:center;gap:8px;background:var(--maroon);color:#fff;
+    border:none;padding:14px 28px;border-radius:999px;font-weight:700;font-size:14.5px;
+    cursor:pointer;box-shadow:var(--shadow);font-family:inherit;
+  }
+  .btn-regulation:hover{background:var(--maroon-light);}
+  dialog.reg-dialog{
+    border:none;border-radius:16px;padding:0;max-width:640px;width:92%;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+  }
+  dialog.reg-dialog::backdrop{background:rgba(20,8,10,.6);backdrop-filter:blur(2px);}
+  .reg-dialog-inner{padding:34px 28px 28px;max-height:82vh;overflow-y:auto;position:relative;}
+  .reg-close{
+    position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+    border:none;background:var(--cream);color:var(--maroon-dark);font-size:18px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;line-height:1;
+  }
+  .reg-title{font-size:19px;color:var(--maroon-dark);margin-bottom:16px;border-bottom:2px solid var(--gold);padding-bottom:10px;}
+  .reg-block p{font-size:14px;margin:0 0 10px;}
+  .reg-block a{color:var(--maroon);font-weight:700;text-decoration:underline;}
+  .reg-note{font-size:12.5px;color:var(--muted);}
+  .reg-h4{
+    font-size:13.5px;color:#fff;background:var(--maroon);display:inline-block;
+    padding:5px 14px;border-radius:999px;margin:20px 0 10px;letter-spacing:.05em;
+  }
+  .reg-list{margin:0 0 4px;padding-left:1.2em;font-size:13.5px;color:var(--text);}
+  .reg-list li{margin-bottom:8px;line-height:1.7;}
+  .reg-footnote{margin-top:20px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:16px;}
+
   /* Entry method - key section */
   .entry-section{
     background:linear-gradient(180deg, var(--navy), #12192b);
@@ -360,6 +391,10 @@
     </div>
     <div class="schedule-note">
       ※100チーム以上の参加のため予選上位64チームが決勝トーナメントに進出します。自由参加の交流戦もございます。
+    </div>
+
+    <div class="regulation-cta">
+      <button type="button" class="btn-regulation" onclick="document.getElementById('regulation-dialog').showModal()">📋 大会レギュレーションを見る</button>
     </div>
 
     <div class="grid-2" style="margin-top:32px;">
@@ -596,6 +631,45 @@
   <span>ナイモルアプリからエントリー</span>
   <a href="#entry">方法を見る</a>
 </div>
+
+<dialog id="regulation-dialog" class="reg-dialog">
+  <div class="reg-dialog-inner">
+    <button type="button" class="reg-close" onclick="document.getElementById('regulation-dialog').close()" aria-label="閉じる">×</button>
+    <h3 class="reg-title">大会レギュレーション</h3>
+
+    <div class="reg-block">
+      <p><a href="https://molkky.jp/play/official-rule-book/" target="_blank" rel="noopener">日本モルック協会公認ルール</a>を基本ルールとします。</p>
+      <p>決勝戦を除き12ターン制限・時間制限（予選30分、トーナメント40分）となります。</p>
+      <p>持参したモルック棒を使用することができます。<br><span class="reg-note">※ただし加工などにより相手より指摘を受けた場合は使用をお控えください。</span></p>
+    </div>
+
+    <h4 class="reg-h4">予選リーグ</h4>
+    <ul class="reg-list">
+      <li><b>形式：</b>3チーム対抗で2セット実施（計3試合・6セット）</li>
+      <li><b>投てき順：</b>ドローショットまたはジャンケンにて決定。2セット目は1セット目の逆順で実施</li>
+      <li><b>得点ボーナス：</b>50点獲得チームには、勝利ボーナスとして+10点（計60点）を付与</li>
+      <li><b>順位決定：</b>6セットの「総得点」にて決定</li>
+      <li><b>進出：</b>上位64チームが決勝リーグ進出、下位チームは交流戦へ</li>
+      <li><b>総得点同点時の優先項目：</b>取得セット数 ＞ 50点以外で一番高い点数 ＞ モルックアウト</li>
+    </ul>
+
+    <h4 class="reg-h4">決勝トーナメント</h4>
+    <ul class="reg-list">
+      <li><b>形式：</b>2チーム対抗。最大3セット制（2セット先取で勝利）</li>
+      <li><b>投てき順：</b>予選順位が高いチームにて選択（2セット目は逆順）</li>
+      <li><b>3セット目：</b>1勝1敗の場合のみ実施。1・2セット目の総得点が高いチームが先攻</li>
+    </ul>
+
+    <h4 class="reg-h4">交流戦</h4>
+    <ul class="reg-list">
+      <li><b>参加方法：</b>予選結果発表後より参加チームを募集、予選敗退チームとトーナメント敗退チームが自由参加可能です</li>
+      <li><b>形式：</b>3チーム対抗で2セット実施（計3試合・6セット）</li>
+      <li><b>投てき順：</b>ドローショットまたはジャンケンにて決定。2セット目は1セット目の逆順で実施</li>
+    </ul>
+
+    <p class="reg-footnote">なお、得点入力はスコアシート、試合結果の入力はアプリ内で実施いたします。</p>
+  </div>
+</dialog>
 
 </body>
 </html>
