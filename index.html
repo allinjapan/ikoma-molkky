@@ -168,6 +168,10 @@
     display:flex;align-items:center;justify-content:center;line-height:1;
   }
   .reg-title{font-size:19px;color:var(--maroon-dark);margin-bottom:16px;border-bottom:2px solid var(--gold);padding-bottom:10px;}
+  .reg-maps{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+  .reg-map-item{flex:1;min-width:180px;text-align:center;}
+  .reg-map-caption{font-size:12.5px;font-weight:700;color:var(--maroon);margin:0 0 8px;letter-spacing:.05em;}
+  .reg-map-item img{width:100%;border-radius:10px;border:1px solid var(--line);cursor:zoom-in;}
   .reg-block p{font-size:14px;margin:0 0 10px;}
   .reg-block a{color:var(--maroon);font-weight:700;text-decoration:underline;}
   .reg-note{font-size:12.5px;color:var(--muted);}
@@ -394,7 +398,7 @@
     </div>
 
     <div class="regulation-cta">
-      <button type="button" class="btn-regulation" onclick="document.getElementById('regulation-dialog').showModal()">📋 大会レギュレーションを見る</button>
+      <button type="button" class="btn-regulation" onclick="openRegulationDialog()">📋 大会レギュレーションを見る</button>
     </div>
 
     <div class="grid-2" style="margin-top:32px;">
@@ -634,8 +638,19 @@
 
 <dialog id="regulation-dialog" class="reg-dialog">
   <div class="reg-dialog-inner">
-    <button type="button" class="reg-close" onclick="document.getElementById('regulation-dialog').close()" aria-label="閉じる">×</button>
+    <button type="button" class="reg-close" onclick="closeRegulationDialog()" aria-label="閉じる">×</button>
     <h3 class="reg-title">大会レギュレーション</h3>
+
+    <div class="reg-maps">
+      <div class="reg-map-item">
+        <p class="reg-map-caption">会場マップ</p>
+        <a href="assets/img/venue-map.jpg" target="_blank" rel="noopener"><img src="assets/img/venue-map.jpg" alt="会場マップ"></a>
+      </div>
+      <div class="reg-map-item">
+        <p class="reg-map-caption">コート図</p>
+        <a href="assets/img/court-diagram.png" target="_blank" rel="noopener"><img src="assets/img/court-diagram.png" alt="コート図"></a>
+      </div>
+    </div>
 
     <div class="reg-block">
       <p><a href="https://molkky.jp/play/official-rule-book/" target="_blank" rel="noopener">日本モルック協会公認ルール</a>を基本ルールとします。</p>
@@ -670,6 +685,32 @@
     <p class="reg-footnote">なお、得点入力はスコアシート、試合結果の入力はアプリ内で実施いたします。</p>
   </div>
 </dialog>
+
+<script>
+  function openRegulationDialog(){
+    var d = document.getElementById('regulation-dialog');
+    if (d && !d.open) d.showModal();
+    if (location.hash !== '#regulation') history.pushState(null, '', '#regulation');
+  }
+  function closeRegulationDialog(){
+    var d = document.getElementById('regulation-dialog');
+    if (d && d.open) d.close();
+  }
+  function checkRegulationHash(){
+    if (location.hash === '#regulation') {
+      var d = document.getElementById('regulation-dialog');
+      if (d && !d.open) d.showModal();
+    }
+  }
+  var regDialogEl = document.getElementById('regulation-dialog');
+  if (regDialogEl) {
+    regDialogEl.addEventListener('close', function(){
+      if (location.hash === '#regulation') history.replaceState(null, '', location.pathname + location.search);
+    });
+  }
+  window.addEventListener('hashchange', checkRegulationHash);
+  checkRegulationHash();
+</script>
 
 </body>
 </html>
